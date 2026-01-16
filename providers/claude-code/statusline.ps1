@@ -51,7 +51,7 @@ STATUS=$status
 }
 
 # Extract values with null coalescing
-$modelName = if ($data.model.display_name) { $data.model.display_name } else { "Claude" }
+$modelName = if ($data.model.display_name) { $data.model.display_name } else { "Model" }
 $currentDir = $data.workspace.current_dir
 $projectDir = $data.workspace.project_dir
 $usedPct = $data.context_window.used_percentage

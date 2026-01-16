@@ -1,7 +1,7 @@
 ---
 name: test-runner
 description: Use this agent when the user requests to run tests, execute the test suite, check if tests pass, verify test results, or validate code changes through testing. This agent should be used proactively after significant code changes or when the user asks about test status.\n\nExamples:\n- User: "Run the tests for this project and report back the results"\n  Assistant: "I'll use the Task tool to launch the test-runner agent to execute the test suite and report the results."\n  \n- User: "Can you check if all the tests still pass after my changes?"\n  Assistant: "Let me use the test-runner agent to verify that all tests pass with your recent changes."\n  \n- User: "I just modified the parser.c file, can you make sure everything still works?"\n  Assistant: "I'll use the test-runner agent to run the test suite and confirm that your changes to parser.c haven't broken anything."\n  \n- User: "What's the current test status?"\n  Assistant: "I'll launch the test-runner agent to check the current test status and provide you with a detailed report."
-model: tier-fast
+model: gpt-5.2.codex-medium
 color: yellow
 ---
 

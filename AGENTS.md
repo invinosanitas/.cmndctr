@@ -5,8 +5,8 @@
 ## Commit Authorship
 
 When committing code changes:
-- Never add Claude as a commit author.
-- Always commit as using the default git settings
+- Never add the assistant as a commit author.
+- Always commit using the default git settings
 
 ## Documentation Style
 

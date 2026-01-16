@@ -125,7 +125,7 @@ def main():
                 sys.exit(2)  # Exit code 2 blocks the command
             
     except Exception as e:
-        # Silent fail - don't break Claude's workflow
+        # Silent fail - don't break the assistant workflow
         sys.exit(0)
 
 if __name__ == '__main__':

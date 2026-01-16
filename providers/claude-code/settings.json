@@ -119,7 +119,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -Command \"py $env:USERPROFILE\\.claude\\hooks\\protect_claude_md.py\""
+            "command": "powershell -NoProfile -Command \"py $env:USERPROFILE\\.claude\\hooks\\protect_instructions_md.py\""
           }
         ]
       },

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Emoji checker hook for Claude Code.
-Detects emojis in edited files and asks Claude to remove them.
+Detects emojis in edited files and asks the assistant to remove them.
 """
 import json
 import sys
@@ -39,7 +39,7 @@ try:
     emojis_found = EMOJI_PATTERN.findall(content)
 
     if emojis_found:
-        # Exit with code 2 to block and provide feedback to Claude
+        # Exit with code 2 to block and provide feedback to the assistant
         print(f"Emojis are not allowed in files. Please remove or replace the emojis in {file_path} with text equivalents like [X], [OK], [WARNING], etc.", file=sys.stderr)
         sys.exit(2)
 

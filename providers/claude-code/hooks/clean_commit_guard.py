@@ -111,8 +111,8 @@ def main():
                 has_issue, issue_message = check_git_commit_command(f'git commit -m "{message}"')
                 if has_issue:
                     print(f"BLOCKED: {issue_message}", file=sys.stderr)
-                    print("\nYour CLAUDE.md configuration specifies:", file=sys.stderr)
-                    print("- Never add Claude as a commit author", file=sys.stderr)
+                    print("\nYour AGENTS.md configuration specifies:", file=sys.stderr)
+                    print("- Never add the assistant as a commit author", file=sys.stderr)
                     print("- Always commit using the default git settings", file=sys.stderr)
                     sys.exit(2)  # Exit code 2 blocks the command
             sys.exit(0)
@@ -142,8 +142,8 @@ def main():
         
         if has_issue:
             print(f"BLOCKED: {message}", file=sys.stderr)
-            print("\nYour CLAUDE.md configuration specifies:", file=sys.stderr)
-            print("- Never add Claude as a commit author", file=sys.stderr)
+            print("\nYour AGENTS.md configuration specifies:", file=sys.stderr)
+            print("- Never add the assistant as a commit author", file=sys.stderr)
             print("- Always commit using the default git settings", file=sys.stderr)
             
             # Suggest cleaned command if it's a commit
@@ -157,7 +157,7 @@ def main():
             sys.exit(2)  # Exit code 2 blocks the command
             
     except Exception as e:
-        # Silent fail - don't break Claude's workflow
+        # Silent fail - don't break the assistant workflow
         sys.exit(0)
 
 if __name__ == '__main__':
