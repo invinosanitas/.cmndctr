@@ -34,8 +34,8 @@ def apply_mapping(content, mapping, source_path):
     return re.sub(r"^model:\s*(tier-[\w-]+)\s*$", replace, content, flags=re.MULTILINE)
 
 
-def sync_dir(src_dir, dest_dir, mapping):
-    if dest_dir.exists():
+def sync_dir(src_dir, dest_dir, mapping, clean):
+    if clean and dest_dir.exists():
         shutil.rmtree(dest_dir)
     dest_dir.mkdir(parents=True, exist_ok=True)
 
@@ -47,12 +47,33 @@ def sync_dir(src_dir, dest_dir, mapping):
         dest_file.write_text(apply_mapping(content, mapping, src_file))
 
 
-def main():
-    if len(sys.argv) != 2 or sys.argv[1] in {"-h", "--help"}:
-        print("Usage: apply-model-tiers.py <provider>")
+def parse_args(argv):
+    clean = False
+    provider = None
+
+    for arg in argv[1:]:
+        if arg in {"-h", "--help"}:
+            print("Usage: apply-model-tiers.py <provider> [--clean]")
+            sys.exit(0)
+        if arg == "--clean":
+            clean = True
+            continue
+        if provider is None:
+            provider = arg
+            continue
+        print(f"ERROR: Unexpected argument: {arg}")
+        print("Usage: apply-model-tiers.py <provider> [--clean]")
         sys.exit(1)
 
-    provider = sys.argv[1]
+    if not provider:
+        print("Usage: apply-model-tiers.py <provider> [--clean]")
+        sys.exit(1)
+
+    return provider, clean
+
+
+def main():
+    provider, clean = parse_args(sys.argv)
     root = Path(__file__).resolve().parents[1]
     provider_dir = root / "providers" / provider
     if not provider_dir.exists():
@@ -65,9 +86,10 @@ def main():
         src_dir = root / name
         if not src_dir.exists():
             continue
-        sync_dir(src_dir, provider_dir / name, mapping)
+        sync_dir(src_dir, provider_dir / name, mapping, clean)
 
-    print(f"OK: Wrote model-mapped files to {provider_dir}")
+    clean_suffix = " (clean)" if clean else ""
+    print(f"OK: Wrote model-mapped files to {provider_dir}{clean_suffix}")
 
 
 if __name__ == "__main__":

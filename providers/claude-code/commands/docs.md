@@ -11,7 +11,7 @@ Current working directory: !`pwd`
 
 Recent changes: !`git log --oneline -5`
 
-Documentation files: !`ls *.md 2>/dev/null`
+Documentation files: !`rg --files -g '*.md'`
 
 ## Your task
 
@@ -29,12 +29,12 @@ Use the doc-reviewer agent to analyze the current state of documentation:
 ## Phase 2: Implement Changes
 Use the doc-implementer agent to execute the review recommendations:
 - Update existing documentation files
-- Create new documentation where needed
+- Create new documentation only when explicitly requested by the user
 - Fix broken links and references
 - Ensure consistent formatting and quality
 
 ## Phase 3: Commit Changes
-Use the committer agent to create a conventional commit for all documentation improvements.
+Use `/cc` to create a conventional commit for all documentation improvements.
 
 If arguments are provided, focus the entire workflow on the specified files or directories. Otherwise, perform a comprehensive documentation review and update of the entire project.
 

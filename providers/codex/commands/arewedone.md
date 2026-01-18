@@ -18,4 +18,4 @@ After the agent returns its review results, you should immediately make the reco
 
 # 3. Commit the changes
 
-Use the committer agent to create a conventional commit for all the completed changes. 
+Use `/cc` to create a conventional commit for all the completed changes.
