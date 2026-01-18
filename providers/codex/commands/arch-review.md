@@ -4,6 +4,7 @@ argument-hint: [path/to/directory]... (optional)
 allowed-tools: Bash(git:diff)
 ---
 Use the **architecture-reviewer** subagent to conduct a thorough architectural review.
+Use the Task tool to launch the architecture-reviewer agent.
 
 Your analysis target is determined by the following rules:
 

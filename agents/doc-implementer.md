@@ -15,6 +15,8 @@ Your core responsibilities include:
 4. **Fix Technical Issues**: Resolve broken links, update code examples, fix formatting
 5. **Maintain Consistency**: Ensure all changes follow project documentation standards
 
+Constraint: Never create new `.md` files unless explicitly instructed.
+
 **Your Implementation Process:**
 
 1. **Parse Review Findings**:

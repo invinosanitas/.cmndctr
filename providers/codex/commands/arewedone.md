@@ -5,6 +5,7 @@ description: Run structural completeness review
 # 1. Structural Completeness Review
 
 Use the structural-completeness-reviewer agent to check if recent changes are fully integrated and no technical debt was introduced.
+Use the Task tool to launch the structural-completeness-reviewer agent.
 
 Launch the structural-completeness-reviewer agent to verify:
 - Changes are fully integrated
@@ -18,4 +19,4 @@ After the agent returns its review results, you should immediately make the reco
 
 # 3. Commit the changes
 
-Use `/cc` to create a conventional commit for all the completed changes.
+Use the Task tool to launch the committer agent to create a conventional commit via /cc.

@@ -4,6 +4,7 @@ argument-hint: [path/to/file]... (optional)
 allowed-tools: Bash(git:diff)
 ---
 Engage the **ui-ux-consultant** subagent to perform a UI/UX and accessibility review.
+Use the Task tool to launch the ui-ux-consultant agent.
 
 Your analysis target is determined by the following rules:
 

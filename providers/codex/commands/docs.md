@@ -21,6 +21,7 @@ Execute a complete documentation workflow in three phases:
 
 ## Phase 1: Documentation Review
 Use the doc-reviewer agent to analyze the current state of documentation:
+- Use the Task tool to launch the doc-reviewer agent.
 - Identify code changes that need corresponding documentation updates
 - Find documentation that has become outdated
 - Suggest areas where new documentation should be added
@@ -28,13 +29,14 @@ Use the doc-reviewer agent to analyze the current state of documentation:
 
 ## Phase 2: Implement Changes
 Use the doc-implementer agent to execute the review recommendations:
+- Use the Task tool to launch the doc-implementer agent.
 - Update existing documentation files
 - Create new documentation only when explicitly requested by the user
 - Fix broken links and references
 - Ensure consistent formatting and quality
 
 ## Phase 3: Commit Changes
-Use `/cc` to create a conventional commit for all documentation improvements.
+Use the Task tool to launch the committer agent to create a conventional commit via /cc.
 
 If arguments are provided, focus the entire workflow on the specified files or directories. Otherwise, perform a comprehensive documentation review and update of the entire project.
 

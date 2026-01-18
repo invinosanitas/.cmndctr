@@ -4,6 +4,7 @@ argument-hint: [path/to/file]... (optional)
 allowed-tools: Bash(git:diff)
 ---
 Use the **performance-profiler** subagent to analyze code for performance issues.
+Use the Task tool to launch the performance-profiler agent.
 
 Your analysis target is determined by the following rules:
 

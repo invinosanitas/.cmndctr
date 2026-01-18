@@ -11,7 +11,7 @@
       "tier-quality": "opus"
     },
     "codex": {
-      "tier-fast": "gpt-5.2.codex-medium",
+      "tier-fast": "gpt-5.2-codex-medium",
       "tier-balanced": "gpt-5.2-codex-high",
       "tier-quality": "gpt-5.2-codex-extrahigh"
     }
